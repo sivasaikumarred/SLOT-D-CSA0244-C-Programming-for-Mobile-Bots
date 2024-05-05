@@ -1,0 +1,46 @@
+package com.jsp.springioc.Setterinjection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Mobile {
+	private int id ;
+	private String brand;
+	private double price ;
+	@Autowired
+	private Sim sim;
+
+	public int getId() {
+		return id;
+	}
+	@Value("1")
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+	@Value("samsung")
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+	@Value("87654")
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public Sim getSim() {
+		return sim;
+	}
+	@Value("234")
+	public void setSim(Sim sim) {
+		this.sim = sim;
+	}
+}
